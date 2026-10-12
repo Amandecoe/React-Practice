@@ -1,11 +1,9 @@
-import Navbar from "./Components/Navbar";
-import MainComponent from "./Components/Main";
+import Navbar from "./Components/Navbar"
 
 export default function App(){
     return (
         <>
-        <Navbar/>
-        <MainComponent/>
+            <Navbar/>
         </>
     )
 }
