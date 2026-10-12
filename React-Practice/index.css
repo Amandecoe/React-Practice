@@ -43,3 +43,8 @@ main > ul >li{
     margin-block: 20px;
     line-height: 19px;
 }
+
+main > ul >li::marker{
+    color: #61DAFB;
+    font-size: 1.5rem;
+}
