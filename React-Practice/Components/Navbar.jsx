@@ -4,6 +4,11 @@ export default function Navbar(){
     <header>
         <img src = "../images/images.jpeg"/>
     </header>
+    <main>
+        <h2>Jaden Smith</h2>
+        <span id="Role">Actor & Music Producer</span>
+        <p>jadensmith.website</p>
+    </main>
     </>
     )
 }
