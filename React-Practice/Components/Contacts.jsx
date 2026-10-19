@@ -1,11 +1,10 @@
-export default function Contacts(){
+export default function Contacts(props){
     return(
         <>
         <div className="Contact-card">
-            <img />
+            <img src={props.img} />
             <h3></h3>
             <div className="Info">
-                
             </div>
         </div>
         </>
