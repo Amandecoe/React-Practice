@@ -23,7 +23,7 @@ export default function App(){
             <Contacts
             img = "./images/index.webp"
             name = "Patrick Dempsey"
-            phone = "+123748483"
+            phone = "+123741483"
             email="patrickgig@gmail.com"
             />
         </div>
