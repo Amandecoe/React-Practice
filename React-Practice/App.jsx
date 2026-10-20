@@ -5,7 +5,7 @@ export default function App(){
             <Contacts
             img = "./images/Patrick Dempsey.jpeg"
             name = "Patrick Dempsey"
-            phone = "+12374823gi3"
+            phone = "+12374823223"
             email="patrickgig@gmail.com"
             />
             <Contacts
