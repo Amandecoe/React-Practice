@@ -3,7 +3,6 @@ import Header from "./Components/Header"
 export default function App(){
     return(
         <>
-        const image = {{}}
         <Header/>
             <main className="container">
                 <Entry
