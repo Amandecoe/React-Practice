@@ -2,23 +2,22 @@ import Entry from "./Components/Entry"
 import Header from "./Components/Header"
 import data from "./data"
 export default function App(){
-    const data = data.map((d)=> {
-        return <Entry
-        img={{src:data.img.src,
-            alt:data.img.alt
-        }}
-        title = {data.img}
-        country = {data.country}
-        googleMapsLink = {data.googleMapsLink}
-        date = {data.dates}
-        text = {data.text}
-        />
+    const datas = data.map((entry)=> {
+        return (
+        <Entry
+        img={entry.img}
+        title = {entry.img}
+        country = {entry.country}
+        googleMapsLink = {entry.googleMapsLink}
+        date = {entry.dates}
+        text = {entry.text}
+        />)
     })
     return(
         <>
         <Header/>
             <main className="container">
-                <Entry/>
+                {datas}
             </main>
         </>
     )
