@@ -15,7 +15,7 @@ export default function Entry(props){
                     alt="map marker icon"
                 />
                 <span className="country">{props.country}</span>
-                <a href= {props.map}>View on Google Maps</a>
+                <a href= {props.googleMapsLink}>View on Google Maps</a>
                 <h2 className="entry-title">{props.title}</h2>
                 <p className="trip-dates">{props.date}</p>
                 <p className="entry-text">{props.text}</p>
