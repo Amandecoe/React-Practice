@@ -1,8 +1,17 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     font-family: Inter, sans-serif;
+}
+header{
+    display:flex;
+    flex-direction: row;
+    gap:10px;
+    justify-content: center;
+}
+.Logo{
+    width: 50px;
+    height: 60px;
 }
