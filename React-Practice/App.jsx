@@ -5,7 +5,7 @@ export default function App(){
     const entryelements = data.map((entry )=> {
         return (
         <Entry
-        entry = {entry}
+        {...entry}
         />)
     })
     return(
