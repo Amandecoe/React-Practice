@@ -1,11 +1,11 @@
 export default function Header(){
     return (
         <header>
-            <img className="Logo"
+            <img
             src = "./images/chef-claude-icon.png"
             alt= "Chef Logo"
             />
-            <h2>Chef Claude</h2>
+            <h1>Chef Claude</h1>
         </header>
     )
 }
