@@ -3,9 +3,12 @@ export default function Main(){
     const listofingredient = ingredients.map(ingredient=>(
         <li key = {ingredient}>{ingredient}</li>
     ))
+    function submit(event){
+        console.log("submitted")
+    }
     return(
     <main>
-        <form className="ingredient">
+        <form onSubmit={submit} className="ingredient">
             <input
             type="text"
             placeholder="e.g oregano"
