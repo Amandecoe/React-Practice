@@ -4,7 +4,10 @@ export default function Main(){
         <li key = {ingredient}>{ingredient}</li>
     ))
     function submit(event){
-        console.log("submitted")
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+        const newIngredient = formData.get("ingredient")
+        ingredients.push(newIngredient)
     }
     return(
     <main>
@@ -12,7 +15,8 @@ export default function Main(){
             <input
             type="text"
             placeholder="e.g oregano"
-            aria-label="Add Ingredient"/>
+            aria-label="Add Ingredient"
+            name="ingredient"/>
             <button>Add Ingredient</button>
         </form>
         <ul>
