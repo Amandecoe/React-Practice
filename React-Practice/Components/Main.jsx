@@ -1,4 +1,5 @@
 export default function Main(){
+    const ingredients = ["Chicken", "Oregano", "Tomatoes"]
     return(
     <main>
         <form className="ingredient">
