@@ -4,11 +4,11 @@ import Main from "./Components/Main"
 export default function App(){
     const [count, setCount] = React.useState(0)
     function add (){
-        setCount(count+1)
+        setCount( prevCount=> prevCount+1)
     }
     function minus(){
-        setCount(count-1)
-    }
+        setCount(prevCount=> prevCount-1)
+    } //we use this if the new state depends on the old state
     return(
         <>
         <button onClick={add}>{count}+</button>
