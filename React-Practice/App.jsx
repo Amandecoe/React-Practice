@@ -6,9 +6,13 @@ export default function App(){
     function add (){
         setCount(count+1)
     }
+    function minus(){
+        setCount(count-1)
+    }
     return(
         <>
         <button onClick={add}>{count}+</button>
+        <button onClick={minus}>{count}-</button>
         <Header/>
         <Main/>
         </>
