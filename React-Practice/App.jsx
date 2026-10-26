@@ -4,11 +4,11 @@ import Main from "./Components/Main"
 export default function App(){
     const [count, setCount] = React.useState(0)
     function add (){
-        console.log("Add")
+        setCount(count+1)
     }
     return(
         <>
-        <button onClick={add}>Add</button>
+        <button onClick={add}>{count}+</button>
         <Header/>
         <Main/>
         </>
