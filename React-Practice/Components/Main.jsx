@@ -5,7 +5,7 @@ export default function Main(){
         <li key = {ingredient}>{ingredient}</li>
     ))
     function submit(event){
-        event.preventDefault()
+        event.preventDefault() //prevents the page refresh after data input on the form
         const formData = new FormData(event.currentTarget)
         const newIngredient = formData.get("ingredient") //stores user input inside here
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
