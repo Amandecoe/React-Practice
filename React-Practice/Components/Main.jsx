@@ -7,7 +7,7 @@ export default function Main(){
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
         const newIngredient = formData.get("ingredient")
-        ingredients.push(newIngredient)
+        
     }
     return(
     <main>
