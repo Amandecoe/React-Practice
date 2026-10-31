@@ -7,7 +7,7 @@ export default function Main(){
     function submit(event){
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
-        const newIngredient = formData.get("ingredient")
+        const newIngredient = formData.get("ingredient") //stores user input inside here
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
     return(
