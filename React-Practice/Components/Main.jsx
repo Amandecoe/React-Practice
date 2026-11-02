@@ -19,7 +19,15 @@ export default function Main(){
             <button>Add Ingredient</button>
         </form>
         <section>
-            <h2></h2>
+            <h2>Ingredients on Hand:</h2>
+            <ul></ul>
+            <div>
+                <div>
+                    <h3></h3>
+                    <p></p>
+                    <button></button>
+                </div>
+            </div>
         </section>
     </main>
     )
