@@ -4,15 +4,13 @@ export default function Main(){
     const listofingredient = ingredients.map(ingredient=>(
         <li key = {ingredient}>{ingredient}</li>
     ))
-    function submit(event){
-        event.preventDefault() //prevents the page refresh after data input on the form
-        const formData = new FormData(event.currentTarget) //gets the form data
+    function submit(formData){
         const newIngredient = formData.get("ingredient") //stores user input inside here
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
     return(
     <main>
-        <form onSubmit={submit} className="ingredient">
+        <form action={submit} className="ingredient">
             <input
             type="text"
             placeholder="e.g oregano"
