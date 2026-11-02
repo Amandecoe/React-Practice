@@ -20,13 +20,13 @@ export default function Main(){
         </form>
         <section>
             <h2>Ingredients on Hand:</h2>
-            <ul></ul>
-            <div>
+            <ul className="ingredients-list" aria-live="polite">{listofingredient}</ul>
+            <div className="get-recipe-container">
                 <div>
-                    <h3></h3>
-                    <p></p>
-                    <button></button>
+                    <h3>Ready for a recipe?</h3>
+                    <p>Generate a recipe from the list of ingredients</p>
                 </div>
+                <button>Get a recipe</button>
             </div>
         </section>
     </main>
