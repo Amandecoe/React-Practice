@@ -10,7 +10,7 @@ export default function Main(){
     }
     return(
     <main>
-        <form action={submit} className="ingredient">
+        <form action={submit} className="add-ingredient-form">
             <input
             type="text"
             placeholder="e.g oregano"
