@@ -18,7 +18,9 @@ export default function Main(){
             name="ingredient"/>
             <button>Add Ingredient</button>
         </form>
-        
+        <section>
+            <h2></h2>
+        </section>
     </main>
     )
 }
