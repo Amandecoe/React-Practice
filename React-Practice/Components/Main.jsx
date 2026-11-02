@@ -18,9 +18,7 @@ export default function Main(){
             name="ingredient"/>
             <button>Add Ingredient</button>
         </form>
-        <ul>
-            {listofingredient}
-        </ul>
+        
     </main>
     )
 }
