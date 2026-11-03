@@ -1,6 +1,7 @@
 import React from "react"
 import IngredientList from "./IngredientList"
 import ClaudeRecipe from "./ClaudeRecipeSection"
+import { getRecipeFromMistral } from "../ai"
 export default function Main(){
     const [ingredients, setIngredients] = React.useState([])
 
@@ -10,8 +11,9 @@ export default function Main(){
     }
     const [recipeShown, setrecipeShown]=React.useState(false)
 
-    function GetRecipe(){
-        setrecipeShown(prevrecipe => !prevrecipe)
+    async function GetRecipe(){
+        const generatedrecipe = await getRecipeFromMistral(ingredients)
+        console.log(generatedrecipe)
     }
     return(
     <main>

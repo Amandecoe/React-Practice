@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@huggingface/inference": "^4.13.32",
+    "@mistralai/mistralai": "^3.5.0",
+    "huggingface": "^1.4.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
