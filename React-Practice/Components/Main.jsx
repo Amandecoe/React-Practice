@@ -1,4 +1,5 @@
 import React from "react"
+import IngredientList from "./IngredientList"
 export default function Main(){
     const [ingredients, setIngredients] = React.useState([])
     const listofingredient = ingredients.map(ingredient=>(
