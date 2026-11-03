@@ -1,5 +1,6 @@
 import React from "react"
 import IngredientList from "./IngredientList"
+import ClaudeRecipe from "./ClaudeRecipeSection"
 export default function Main(){
     const [ingredients, setIngredients] = React.useState([])
     const listofingredient = ingredients.map(ingredient=>(
@@ -34,7 +35,9 @@ export default function Main(){
                 <button onClick={GetRecipe}>Get a recipe</button>
             </div>
             : null}
-        </section> : null}
+        </section>
+        : null}
+        {recipeShown ? <ClaudeRecipe /> : null}
     </main>
     )
 }
