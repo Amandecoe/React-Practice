@@ -3,7 +3,7 @@ import IngredientList from "./IngredientList"
 import ClaudeRecipe from "./ClaudeRecipeSection"
 export default function Main(){
     const [ingredients, setIngredients] = React.useState([])
-    
+
     function submit(formData){
         const newIngredient = formData.get("ingredient") //stores user input inside here
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
@@ -23,8 +23,8 @@ export default function Main(){
             name="ingredient"/>
             <button>Add Ingredient</button>
         </form>
-        {ingredients.length>0 ? <IngredientList ingredients={ingredients}/> : null}
-        {recipeShown ? <ClaudeRecipe  GetRecipe = {GetRecipe}/> : null}
+        {ingredients.length>0 ? <IngredientList ingredients={ingredients} GetRecipe = {GetRecipe}/> : null}
+        {recipeShown ? <ClaudeRecipe/> : null}
     </main>
     )
 }
