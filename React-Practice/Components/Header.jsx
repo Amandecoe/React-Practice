@@ -5,7 +5,7 @@ export default function Header(){
             src = "./images/chef-claude-icon.png"
             alt= "Chef Logo"
             />
-            <h1>Chef Claude</h1>
+            <h1>Chefoh</h1>
         </header>
     )
 }
