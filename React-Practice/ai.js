@@ -14,13 +14,12 @@ export async function getRecipeFromMistral(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ");
     try {
         const response = await client.chat.complete({
-            model: "pixtral-12b-2409", 
+            model: "pixtral-12b-2409",
             messages: [
                 { role: "system", content: SYSTEM_PROMPT },
                 { role: "user", content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` },
             ],
         });
-
         return response.choices[0].message.content;
     } catch (err) {
         console.error("Mistral Inference Error:", err.message);

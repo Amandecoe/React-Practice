@@ -9,11 +9,11 @@ export default function Main(){
         const newIngredient = formData.get("ingredient") //stores user input inside here
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
-    const [recipeShown, setrecipeShown]=React.useState(false)
 
+    const [recipe, setRecipe] = React.useState("")
     async function GetRecipe(){
         const generatedrecipe = await getRecipeFromMistral(ingredients)
-        console.log(generatedrecipe)
+        setRecipe(generatedrecipe)
     }
     return(
     <main>
@@ -26,7 +26,7 @@ export default function Main(){
             <button>Add Ingredient</button>
         </form>
         {ingredients.length>0 ? <IngredientList ingredients={ingredients} GetRecipe = {GetRecipe}/> : null}
-        {recipeShown ? <ClaudeRecipe/> : null}
+        {recipe ? <ClaudeRecipe recipe={recipe}/> : null}
     </main>
     )
 }
