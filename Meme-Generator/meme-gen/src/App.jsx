@@ -9,12 +9,15 @@ export default function App() {
     React.useEffect(function(){
         fetch("https://swapi.dev/api/people/1")
         .then (res => res.json())
-        .then (data => )
+        .then (data => setStarWarsData(data))
     }, [count])
     return (
         <>
             <Header />
             <Main />
+            <h2>The Count is {count}</h2>
+            <button onClick={() => setCount(prevcount => prevCount +1)}>Add</button>
+            <p>{JSON.stringify(starWarsData, null, 2)}</p>
         </>
     )
 }
