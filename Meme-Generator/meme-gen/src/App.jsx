@@ -3,21 +3,10 @@ import Main from "../components/Main"
 import React from "react"
 
 export default function App() {
-    const [count, setCount] = React.useState(0)
-    const [starWarsData, setStarWarsData] = React.useState({})
-
-    React.useEffect(function(){
-        fetch("https://swapi.dev/api/people/1")
-        .then (res => res.json())
-        .then (data => setStarWarsData(data))
-    }, [count])
     return (
         <>
             <Header />
             <Main />
-            <h2>The Count is {count}</h2>
-            <button onClick={() => setCount(prevcount => prevCount +1)}>Add</button>
-            <p>{JSON.stringify(starWarsData, null, 2)}</p>
         </>
     )
 }
