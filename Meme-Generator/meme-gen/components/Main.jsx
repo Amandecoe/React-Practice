@@ -5,6 +5,8 @@ export default function Main() {
         bottomText : "Walk into Mordor",
         imageUrl : "http://i.imgflip.com/1bij.jpg"
     })
+
+    
     function handleChange(event){
         const {value, name} = event.currentTarget
         setMeme(prevmeme => ({
