@@ -6,7 +6,11 @@ export default function Main() {
         imageUrl : "http://i.imgflip.com/1bij.jpg"
     })
 
-    
+    useEffect(()=>{
+        fetch("https://api.imgflip.com/get_memes")
+        .then(res => res.json())
+        .then(data => console.log(data))
+    },[]) //run it one time, because the array doesn't change
     function handleChange(event){
         const {value, name} = event.currentTarget
         setMeme(prevmeme => ({
