@@ -9,7 +9,7 @@ export default function Main() {
     useEffect(()=>{
         fetch("https://api.imgflip.com/get_memes")
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => console.log(data.data.memes))
     },[]) //run it one time, because the array doesn't change
     function handleChange(event){
         const {value, name} = event.currentTarget
