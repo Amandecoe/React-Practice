@@ -5,11 +5,11 @@ export default function Main() {
         bottomText : "Walk into Mordor",
         imageUrl : "http://i.imgflip.com/1bij.jpg"
     })
-
+    const [allMemes, setAllMemes] = useState([])
     useEffect(()=>{
         fetch("https://api.imgflip.com/get_memes")
         .then(res => res.json())
-        .then(data => console.log(data.data.memes))
+        .then(data => setAllMemes(data.data.memes))
     },[]) //run it one time, because the array doesn't change
     function handleChange(event){
         const {value, name} = event.currentTarget
