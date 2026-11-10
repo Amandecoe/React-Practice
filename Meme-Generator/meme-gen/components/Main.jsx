@@ -11,6 +11,9 @@ export default function Main() {
         .then(res => res.json())
         .then(data => setAllMemes(data.data.memes))
     },[]) //run it one time, because the array doesn't change
+    function getMemeImage(){
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
+    }
     function handleChange(event){
         const {value, name} = event.currentTarget
         setMeme(prevmeme => ({
@@ -39,7 +42,7 @@ export default function Main() {
                         value={meme.bottomText}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
+                <button onClick={getMemeImage}>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
                 <img src={meme.imageUrl} />
