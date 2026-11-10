@@ -12,7 +12,7 @@ export default function Main() {
         .then(data => setAllMemes(data.data.memes))
     },[]) //run it one time, because the array doesn't change
     function getMemeImage(){
-        const randomNumber = Math.floor(Math.random() * allMemes.length)
+        const randomNumber = Math.floor(Math.random() * allMemes.length) //generate a new random number
         const newMemeUrl = allMemes[randomNumber].url //.url is the property of each meme in the array from the api, they contain .url
         setMeme(prevmeme => ({
             ...prevmeme,
