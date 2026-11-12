@@ -6,7 +6,7 @@ export default function Header() {
             <img
                 src={trollFace}
             />
-            <h1>Meme Generator</h1>
+            <h1></h1>
         </header>
     )
 }
