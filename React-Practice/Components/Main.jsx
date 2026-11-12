@@ -4,7 +4,7 @@ import ClaudeRecipe from "./ClaudeRecipeSection"
 import { getRecipeFromMistral } from "../ai"
 export default function Main(){
     const [ingredients, setIngredients] = React.useState([])
-
+    const recipeSection = React.useRef(null)
     function submit(formData){
         const newIngredient = formData.get("ingredient") //stores user input inside here
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
