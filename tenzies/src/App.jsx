@@ -1,4 +1,12 @@
 import Die from "../components/Die"
+function generateAllNewDice(){
+      const num = []
+      for (let i=0; i<10; i++){
+          let rand =Math.floor(Math.random() * 6) + 1
+          num.push(rand)
+      }
+      return num
+    }
   export default function App() {
       return (
           <main>
