@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: Inter, sans-serif;
 }
 
 div#root {
@@ -42,6 +43,7 @@ main {
   border-radius: 10px;
   border: none;
   background-color: white;
+  font-family: Inter, sans-serif;
   font-size: 1.75rem;
   font-weight: bold;
   cursor: pointer;
