@@ -6,7 +6,7 @@ import {nanoid} from "nanoid"
       const num = []
       for (let i=0; i<10; i++){
           let rand ={ value: Math.floor(Math.random() * 6) + 1,
-            isHeld : false,
+            isHeld : true,
             id: nanoid()
           }
           num.push(rand)
@@ -14,7 +14,8 @@ import {nanoid} from "nanoid"
       return num
     }
     const [dice, setdice] = useState(generateAllNewDice()) //store the random numbers generated from the function in the state array
-    const diceElements = dice.map(dieObj => <Die key ={dieObj.id} value = {dieObj.value} />) //map over that state array which stores the random generated numbers
+    const diceElements = dice.map(dieObj =>
+       <Die key ={dieObj.id} value = {dieObj.value} isHeld={dieObj.isHeld} />) //map over that state array which stores the random generated numbers
     function rollDice(){
       setdice(generateAllNewDice())
     }
