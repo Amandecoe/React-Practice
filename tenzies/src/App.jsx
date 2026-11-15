@@ -6,7 +6,7 @@ import {nanoid} from "nanoid"
       const num = []
       for (let i=0; i<10; i++){
           let rand ={ value: Math.floor(Math.random() * 6) + 1,
-            isHeld : true,
+            isHeld : false,
             id: nanoid()
           }
           num.push(rand)
