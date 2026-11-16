@@ -2,6 +2,7 @@ import Die from "../components/Die"
 import {useState} from "react"
 import {nanoid} from "nanoid"
   export default function App() {
+
     function generateAllNewDice(){
       const num = []
       for (let i=0; i<10; i++){
@@ -13,6 +14,7 @@ import {nanoid} from "nanoid"
       }
       return num
     }
+
     const [dice, setdice] = useState(generateAllNewDice()) //store the random numbers generated from the function in the state array
 
     const diceElements = dice.map(dieObj =>
@@ -22,8 +24,10 @@ import {nanoid} from "nanoid"
         isHeld={dieObj.isHeld}
         hold={() => hold(dieObj.id)}
         id={dieObj.id}/>) //map over that state array which stores the random generated numbers
+
     function rollDice(){
-      setdice(generateAllNewDice())
+      setdice(oldice => oldice.map(die =>
+        die.isHeld ? die : {...die, value: Math.floor(Math.random() * 6) + 1})) //go through the array and if it is held == true then just return the die, if it is not held return a random number
     }
 
     function hold(id){
