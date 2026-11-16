@@ -1,18 +1,11 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
+    padding:50px;
     background-color: #0E0E0D;
     font-family: Karla, sans-serif;
-}
-
-div#root {
-    height: 100%;
-    width: 100%;
-    max-height: 400px;
-    max-width: 400px;
 }
 
 main {
@@ -24,10 +17,7 @@ main {
     justify-content: space-evenly;
     align-items: center;
 }
-.title {
-    font-size: 40px;
-    margin: 0;
-}
+
 .instructions {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -44,7 +34,7 @@ main {
   padding:20px;
 }
 .die {
-  padding: 10%;
+  padding: 15%;
   border: 0;
   border-radius: 16%;
   background: #f5f7fa;
@@ -92,15 +82,13 @@ button.roll-dice{
 .dice-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  max-width: 480px;
+  gap: 15px;
+  max-width: 900px;
   padding: 10px;
 }
 hr{
   color:#2B2A27;
   opacity: 15%;
 }
-.Main-landing{
-  height: 60vh;
-  width: 100vw;
-}
+
+

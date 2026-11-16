@@ -14,7 +14,7 @@ export default function DiceRow(){
                     isHeld ? [value, isHeld] : [Math.ceil(Math.random() * 6), false]
                 )
             )
-        }, 1800)
+        }, 1600)
         return () => clearInterval(id)
     }, [])
     return (
