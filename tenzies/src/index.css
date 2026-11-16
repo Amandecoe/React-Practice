@@ -96,3 +96,7 @@ button.roll-dice{
   max-width: 480px;
   padding: 10px;
 }
+hr{
+  color:#2B2A27;
+  opacity: 15%;
+}

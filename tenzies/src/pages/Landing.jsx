@@ -19,6 +19,7 @@ export default function Landing(props){
         <div className="landing-dice">
             <DiceRow/>
         </div>
+        <hr/>
         </>
     )
 }
