@@ -38,7 +38,8 @@ import Confetti from "react-confetti"
       )
     }
 
-    const gameWon = dice.every(die => die.isHeld)
+    const gameWon = dice.every(die => die.isHeld) &&
+                    dice.every(die => die.value === dice[0].value)
       return (
           <main>
             {gameWon && <Confetti/>}
