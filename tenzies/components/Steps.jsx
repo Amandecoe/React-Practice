@@ -11,6 +11,10 @@ export default function Steps(){
     margin: 0 0 2rem;
     }
 
+    glance{
+
+    }
+
     .glancee{
     display: flex;
     flex-direction: row;
@@ -18,17 +22,22 @@ export default function Steps(){
     width: 100px;
     }
 
-    .glance.h1{
+    .glance>h1{
     font-family: 'Inter Tight'';
+    color: #ffff;
     }
+
     .glance>p{
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-family: JetBrains Mono;
+    font: 48px;
+    color:#fff;
     }
 
     .how-it-works {
     background: #0E0E0D;
     color: #fff;
     padding: 0px 100px 10px;
+    margin: 70px 0px;
     }
 
     .section-label {
@@ -64,7 +73,7 @@ export default function Steps(){
     }
 
     .step h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 700;
     margin: 0 0 0.5rem;
     }
@@ -109,18 +118,18 @@ export default function Steps(){
     <section>
     <h2 className="glance-label">02 At a glance</h2>
     <div className="glancee">
-    <button className="glance">
+    <div className="glance">
         <h1>10</h1>
         <p>dice on the board</p>
-    </button>
-    <button className="glance">
+    </div>
+    <div className="glance">
         <h1>1</h1>
         <p>number to watch</p>
-    </button>
-    <button className="glance">
+    </div>
+    <div className="glance">
         <h1>0</h1>
         <p>accounts needed</p>
-    </button>
+    </div>
     </div>
     </section>
         </>

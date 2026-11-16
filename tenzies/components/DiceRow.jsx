@@ -14,11 +14,11 @@ export default function DiceRow(){
                     isHeld ? [value, isHeld] : [Math.ceil(Math.random() * 6), false]
                 )
             )
-        }, 1600)
+        }, 1100)
         return () => clearInterval(id)
     }, [])
     return (
-        <div className="dice-row">
+        <div style={{marginBottom:'70px'}} className="dice-row">
             {di.map(([value, isHeld], index) => (
                 <Die key={index} value={value} isHeld={isHeld} />
             ))}
