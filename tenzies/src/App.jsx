@@ -14,7 +14,8 @@ import Confetti from "react-confetti"
       }
       return num
     }
-
+    const gameWon = dice.every(die => die.isHeld) &&
+                    dice.every(die => die.value === dice[0].value)
     const [dice, setdice] = useState(() => generateAllNewDice()) //store the random numbers generated from the function in the state array
     //having the arrow function in the initial value basically makes the state not rerun the generateAllnewDice function but only pass the return value of the function
     const diceElements = dice.map(dieObj =>
@@ -26,8 +27,13 @@ import Confetti from "react-confetti"
         id={dieObj.id}/>) //map over that state array which stores the random generated numbers
 
     function rollDice(){
+      if (!gameWon){
       setdice(oldice => oldice.map(die =>
         die.isHeld ? die : {...die, value: Math.floor(Math.random() * 6) + 1})) //go through the array and if it is held == true then just return the die, if it is not held return a random number
+      }
+      else{
+        setdice(generateAllNewDice())
+      }
     }
 
     function hold(id){
@@ -38,8 +44,6 @@ import Confetti from "react-confetti"
       )
     }
 
-    const gameWon = dice.every(die => die.isHeld) &&
-                    dice.every(die => die.value === dice[0].value)
       return (
           <main>
             {gameWon && <Confetti/>}
