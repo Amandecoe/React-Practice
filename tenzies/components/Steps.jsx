@@ -28,7 +28,7 @@ export default function Steps(){
     .how-it-works {
     background: #0E0E0D;
     color: #fff;
-    padding: 3rem 2rem;
+    padding: 0px 100px 10px;
     }
 
     .section-label {
