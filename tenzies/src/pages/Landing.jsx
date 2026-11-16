@@ -10,15 +10,13 @@ export default function Landing(props){
         </header>
         <div className="Main-landing">
             <p style={{color: '#A19E96', fontFamily : "Menlo", fontSize: '13px'}}>/ten.zeez/</p>
-            <h1 style = {{color: '#F2F0EA'}}>Tenzies</h1>
-            <p style = {{color: '#F2F0EA'}}>A Dice game with one rule. Roll ten dice, hold the number you want and keep rolling until every die matches</p>
-        </div>
+            <h1 style = {{color: '#F2F0EA', fontWeight: '600', fontfamily: 'Inter Tight'}}>Tenzies</h1>
+            <p style = {{color: '#F2F0EA'}}>A Dice game with one rule. Roll ten dice, hold the number you want and keep rolling until every die matches.</p>
         <div className="landing-btn">
         <button><Link to="/play" className="play-link">Play now</Link></button>
         <button><Link to="/how" ></Link>How it Works</button>
+        <DiceRow/>
         </div>
-        <div className="landing-dice">
-            <DiceRow/>
         </div>
         <hr/>
         <Steps/>

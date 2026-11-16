@@ -1,5 +1,30 @@
 export default function Steps(){
     const styles = `
+    section{
+    padding: 3rem 2rem
+    }
+    .glance-label{
+    color: #888;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0 0 2rem;
+    }
+
+    .glancee{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100px;
+    }
+
+    .glance.h1{
+    font-family: 'Inter Tight'';
+    }
+    .glance>p{
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    }
+
     .how-it-works {
     background: #0E0E0D;
     color: #fff;
@@ -38,8 +63,8 @@ export default function Steps(){
     padding-top: 0.4rem;
     }
 
-    .step h3 {
-    font-size: 2rem;
+    .step h2 {
+    font-size: 1.6rem;
     font-weight: 700;
     margin: 0 0 0.5rem;
     }
@@ -47,36 +72,56 @@ export default function Steps(){
     .step p {
     color: #999;
     margin: 0;
+    font-weight:200;
+    font-size: 0.9rem;
     }
 `;
     return(
         <>
         <style>{styles}</style>
-            <section class="how-it-works">
-            <h2 class="section-label">01 How it works</h2>
-            <ol class="steps">
-                <li class="step">
-                    <span class="step-num">01</span>
+            <section className="how-it-works">
+            <h2 className="section-label">01 How it works</h2>
+            <ol className="steps">
+                <li className="step">
+                    <span className="step-num">01</span>
                     <div>
-                        <h3>Roll</h3>
+                        <h2>Roll</h2>
                         <p>Ten dice land on random numbers every time you roll.</p>
                     </div>
                 </li>
-    <li class="step">
-        <span class="step-num">02</span>
+    <li className="step">
+        <span className="step-num">02</span>
             <div>
-                <h3>Hold</h3>
+                <h2>Hold</h2>
                 <p>Pick a number and tap its dice to freeze them between rolls.</p>
             </div>
     </li>
-    <li class="step">
-        <span class="step-num">03</span>
+    <li className="step">
+        <span className="step-num">03</span>
             <div>
-                <h3>Match</h3>
+                <h2>Match</h2>
                 <p>Keep rolling the rest until all ten dice show the same number.</p>
             </div>
     </li>
     </ol>
+    </section>
+    <hr/>
+    <section>
+    <h2 className="glance-label">02 At a glance</h2>
+    <div className="glancee">
+    <button className="glance">
+        <h1>10</h1>
+        <p>dice on the board</p>
+    </button>
+    <button className="glance">
+        <h1>1</h1>
+        <p>number to watch</p>
+    </button>
+    <button className="glance">
+        <h1>0</h1>
+        <p>accounts needed</p>
+    </button>
+    </div>
     </section>
         </>
     )
