@@ -7,15 +7,11 @@ const PIPS = {
     6: [1, 3, 4, 6, 7, 9],
 }
 export default function Die(props){
-    const styles = {
-        backgroundColor : props.isHeld ? "#59E391" : "white"
-    }
     return (
         <>
         <button
         className="die"
         aria-pressed={props.isHeld}
-        aria-label={`Die showing ${props.value}${props.isHeld ? ", held" : ""}`}
         onClick={props.hold}
                             >
         {PIPS[props.value].map(cell => (
