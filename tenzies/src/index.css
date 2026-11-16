@@ -5,6 +5,7 @@ body {
     margin: 0;
     background-color: #0E0E0D;
     font-family: Karla, sans-serif;
+    padding: 0px 200px;
 }
 
 main {
@@ -42,11 +43,11 @@ main {
 }
 
 .die[aria-pressed="true"] {
-  background: #59e391;
+  background: #FF5A36;
 }
 
 .die i {
-  width: 72%;
+  width: 100%;
   aspect-ratio: 1;
   margin: auto;
   border-radius: 50%;

@@ -8,10 +8,10 @@ export default function Landing(props){
             Tenzies . 10 dice . 1 number
             <hr/>
         </header>
-        <div style={{padding: '0px 100px 10px'}} className="Main-landing">
+        <div style={{height: '80vh',padding: '0px 100px 10px'}} className="Main-landing">
             <p style={{color: '#A19E96', fontFamily : "JetBrains Mono", fontSize: '13px', fontWeight: '400'}}>/ten.zeez/</p>
             <h1 style = {{margin: '0px',color: '#F2F0EA', fontWeight: '800', fontfamily: 'Inter Tight', fontSize: '120px'}}>Tenzies</h1>
-            <p style = {{color: '#F2F0EA', fontfamily: 'Inter Tight', fontWeight: '500', fontSize: '24px'}}>A Dice game with one rule. Roll ten dice, <br/> hold the number you want and keep rolling <br/> until every die matches.</p>
+            <p style = {{color: '#F2F0EA', fontfamily: 'Inter Tight', fontWeight: '200', fontSize: '24px'}}>A Dice game with one rule. Roll ten dice, <br/> hold the number you want and keep rolling <br/> until every die matches.</p>
         <div className="landing-btn">
 
         <button style={{ marginBottom:'20px',marginRight:'20px',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#FF5A36' , minHeight:'48px',whiteSpace: 'nowrap'
@@ -21,14 +21,14 @@ export default function Landing(props){
         </button>
 
         <button
-        style={{ color: '#F2F0EA',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#0E0E0D' , minHeight:'48px',whiteSpace: 'nowrap'
+        style={{ marginTop:'10px',marginBottom: '40px', color: '#F2F0EA',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#0E0E0D' , minHeight:'48px',whiteSpace: 'nowrap'
             , borderRadius: '999px', padding:'0px 28px', border:'1px solid #F2F0EA' }}>
             <Link style = {{color: 'inherit', textDecoration:'none'}}to="/how" ></Link>How it Works
         </button>
 
         <DiceRow/>
         </div>
-        <hr/>
+        <hr style={{margin: '30px'}}/>
         </div>
         <Steps/>
         </>
