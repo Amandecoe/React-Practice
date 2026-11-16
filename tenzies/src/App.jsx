@@ -14,10 +14,19 @@ import {nanoid} from "nanoid"
       return num
     }
     const [dice, setdice] = useState(generateAllNewDice()) //store the random numbers generated from the function in the state array
+
     const diceElements = dice.map(dieObj =>
-       <Die key ={dieObj.id} value = {dieObj.value} isHeld={dieObj.isHeld} />) //map over that state array which stores the random generated numbers
+        <Die
+        key ={dieObj.id}
+        value = {dieObj.value}
+        isHeld={dieObj.isHeld}
+        hold={hold}/>) //map over that state array which stores the random generated numbers
     function rollDice(){
       setdice(generateAllNewDice())
+    }
+
+    function hold(id){
+
     }
       return (
           <main>
