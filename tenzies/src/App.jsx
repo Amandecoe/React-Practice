@@ -20,7 +20,8 @@ import {nanoid} from "nanoid"
         key ={dieObj.id}
         value = {dieObj.value}
         isHeld={dieObj.isHeld}
-        hold={hold}/>) //map over that state array which stores the random generated numbers
+        hold={() => hold(dieObj.id)}
+        id={dieObj.id}/>) //map over that state array which stores the random generated numbers
     function rollDice(){
       setdice(generateAllNewDice())
     }
