@@ -1,8 +1,10 @@
 import Die from "../components/Die"
-import {useState} from "react"
+import {useState, useRef, useEffect} from "react"
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
   export default function App() {
+    const [dice, setdice] = useState(() => generateAllNewDice()) //store the random numbers generated from the function in the state array
+
     function generateAllNewDice(){
       const num = []
       for (let i=0; i<10; i++){
@@ -14,10 +16,17 @@ import Confetti from "react-confetti"
       }
       return num
     }
-    const [dice, setdice] = useState(() => generateAllNewDice()) //store the random numbers generated from the function in the state array
+
     //having the arrow function in the initial value basically makes the state not rerun the generateAllnewDice function but only pass the return value of the function
     const gameWon = dice.every(die => die.isHeld) &&
                     dice.every(die => die.value === dice[0].value)
+
+    const buttonRef = useRef(null)
+    useEffect(() => {
+      if(gameWon){
+        buttonRef.current.focus()
+      }
+    }, [gameWon])
     const diceElements = dice.map(dieObj =>
         <Die
         key ={dieObj.id}
@@ -51,7 +60,7 @@ import Confetti from "react-confetti"
               <div className="dice-container">
                   {diceElements}
               </div>
-              <button className="roll-dice"onClick={rollDice}>
+              <button ref={buttonRef} className="roll-dice"onClick={rollDice}>
                 {gameWon ? "New Game" : "Roll"}
                 </button>
           </main>
