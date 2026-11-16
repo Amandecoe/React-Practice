@@ -15,8 +15,8 @@ import Confetti from "react-confetti"
       return num
     }
 
-    const [dice, setdice] = useState(generateAllNewDice()) //store the random numbers generated from the function in the state array
-
+    const [dice, setdice] = useState(() => generateAllNewDice()) //store the random numbers generated from the function in the state array
+    //having the arrow function in the initial value basically makes the state not rerun the generateAllnewDice function but only pass the return value of the function
     const diceElements = dice.map(dieObj =>
         <Die
         key ={dieObj.id}
