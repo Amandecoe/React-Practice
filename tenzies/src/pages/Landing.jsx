@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom"
-export default function Landing(){
+import DiceRow from "../../components/DiceRow"
+export default function Landing(props){
     return(
         <>
         <header style={{color: '#A19E96'}} className="landing-head">
@@ -14,6 +15,9 @@ export default function Landing(){
         <div className="landing-btn">
         <button><Link to="/play" className="play-link">Play now</Link></button>
         <button><Link to="/how" ></Link>How it Works</button>
+        </div>
+        <div className="landing-dice">
+            <DiceRow/>
         </div>
         </>
     )
