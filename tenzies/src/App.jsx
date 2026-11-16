@@ -2,7 +2,6 @@ import Die from "../components/Die"
 import {useState} from "react"
 import {nanoid} from "nanoid"
   export default function App() {
-
     function generateAllNewDice(){
       const num = []
       for (let i=0; i<10; i++){
@@ -38,6 +37,7 @@ import {nanoid} from "nanoid"
       )
     }
 
+    const gameWon = dice.every(die => die.isHeld)
       return (
           <main>
             <h1 className="title">Tenzies</h1>
@@ -46,7 +46,9 @@ import {nanoid} from "nanoid"
               <div className="dice-container">
                   {diceElements}
               </div>
-              <button className="roll-dice"onClick={rollDice}>Roll</button>
+              <button className="roll-dice"onClick={rollDice}>
+                {gameWon ? "Won" : "Roll"}
+                </button>
           </main>
       )
   }
