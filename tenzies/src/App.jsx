@@ -27,8 +27,15 @@ import {nanoid} from "nanoid"
     }
 
     function hold(id){
-
+      setdice(oldice => {
+        return oldice.map(die =>{
+          return die.id == id ?
+          {...die, isHeld: !die.isHeld}
+          : die  //check if the pressed id is equal to the id of the die in the array of random numbers of die
+        })
+      })
     }
+
       return (
           <main>
               <div className="dice-container">
