@@ -11,26 +11,35 @@ export default function Steps(){
     margin: 0 0 2rem;
     }
 
-    glance{
-
-    }
-
     .glancee{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    width: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
     }
 
-    .glance>h1{
-    font-family: 'Inter Tight'';
-    color: #ffff;
+    .glance{
+    background: #191917;
+    border: 1px solid #2B2A27;
+    border-radius: 16px;
+    padding: 24px;
     }
 
-    .glance>p{
-    font-family: JetBrains Mono;
-    font: 48px;
-    color:#fff;
+    .glance>strong{
+    display: block;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: #fff;
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    }
+
+    .glance>span{
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #A19E96;
     }
 
     .how-it-works {
@@ -115,20 +124,21 @@ export default function Steps(){
     </ol>
     </section>
     <hr/>
+
     <section>
     <h2 className="glance-label">02 At a glance</h2>
     <div className="glancee">
     <div className="glance">
-        <h1>10</h1>
-        <p>dice on the board</p>
+        <strong>10</strong>
+        <span>dice on the board</span>
     </div>
     <div className="glance">
-        <h1>1</h1>
-        <p>number to watch</p>
+        <strong>1</strong>
+        <span>number to watch</span>
     </div>
     <div className="glance">
-        <h1>0</h1>
-        <p>accounts needed</p>
+        <strong>0</strong>
+        <span>accounts needed</span>
     </div>
     </div>
     </section>
