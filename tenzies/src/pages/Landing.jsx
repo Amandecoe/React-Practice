@@ -2,6 +2,9 @@ import {Link} from "react-router-dom"
 import DiceRow from "../../components/DiceRow"
 import Steps from "../../components/Steps"
 export default function Landing(props){
+    const goToFeatures = () => {
+    document.querySelector(".how-it-works")?.scrollIntoView({ behavior: "smooth" });
+    };
     return(
         <>
         <header style={{padding:'30px 100px 10px',marginBottom: '20px', color: '#A19E96', fontFamily : "JetBrains Mono", fontSize: '13px'}} className="landing-head">
@@ -20,10 +23,10 @@ export default function Landing(props){
         >Play now</Link>
         </button>
 
-        <button
+        <button onClick={goToFeatures}
         style={{ borderRadius: '999px',marginTop:'10px',marginBottom: '40px', color: '#F2F0EA',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#0E0E0D' , minHeight:'48px',whiteSpace: 'nowrap'
             , padding:'0px 28px', border:'1px solid #F2F0EA' }}>
-            <Link style = {{color: 'inherit', textDecoration:'none'}}to="/how" ></Link>How it Works
+            How it Works
         </button>
 
         <DiceRow/>

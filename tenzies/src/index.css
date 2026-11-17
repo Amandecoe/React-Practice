@@ -171,3 +171,6 @@ hr {
   color: #2B2A27;
   opacity: 15%;
 }
+html {
+  scroll-behavior: smooth;
+}
