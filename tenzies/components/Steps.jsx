@@ -168,8 +168,8 @@ export default function Steps(){
         <h2 className="glance-label">03 Play</h2>
         <div className="ready">
         <h1>Ready to roll?</h1>
-        <button style={{ borderRadius: '999px',marginBottom:'20px',marginRight:'20px',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#FF5A36' , minHeight:'48px',whiteSpace: 'nowrap'
-            , padding:'0px 28px', border:'1px solid black'
+        <button style={{ borderRadius: '999px',marginBottom:'40px',marginRight:'20px',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#FF5A36' , minHeight:'48px',whiteSpace: 'nowrap'
+            , padding:'0px 38px', border:'1px solid black'
         }}><Link style = {{color: 'inherit', textDecoration:'none'}}to="/play" className="play-link"
         >Play now</Link>
         </button>
