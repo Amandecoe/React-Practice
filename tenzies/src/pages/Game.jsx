@@ -57,6 +57,18 @@ export default function Game() {
         )
     )
     }
+
+    const running = timerOn && !gameWon
+
+    useEffect(() => {
+        if (!running) return //if it is not running do nothing
+        const startedAt = Date.now() //the instant the timer begins
+
+        const id = setInterval(()=>{
+            settime(Date.now() - startedAt) //subtract the time our timer began from the time right now to get the difference and know how long since the start up to the now the timer has been running
+        },100)
+        return () => clearInterval(id)
+    },[running]) //if running becomes true then the effect stops, and starts again when it changes back
     return (
         <>
             {gameWon && <Confetti/>}
@@ -75,9 +87,8 @@ export default function Game() {
                 <hr/>
                 <div className="stats">
                     <p>Rolls: {rolls}</p>
-                    <p>Time: {time}</p>
+                    <p>Time: {(time/1000).toFixed(1)}s</p>
                 </div>
-
             <section className="main-dices">
             <div className="dice-container">
                 {diceElements}
