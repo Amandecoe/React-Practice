@@ -155,7 +155,18 @@ main.game {
   padding: 10px;
   height: auto;
 }
-
+.stats{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid #2B2A27;
+  border-bottom: 1px solid #2B2A27;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #A19E96;
+}
 hr {
   color: #2B2A27;
   opacity: 15%;
