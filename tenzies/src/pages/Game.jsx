@@ -1,11 +1,13 @@
 import Die from "/components/Die.jsx"
-import {useState, useRef, useEffect} from "react"
+import {useState, useRef, useEffect, use} from "react"
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 import { Link } from "react-router-dom"
 export default function Game() {
     const [dice, setdice] = useState(() => generateAllNewDice()) //store the random numbers generated from the function in the state array
     const [rolls, setRolls] = useState(0)
+    const [time, settime] = useState(0)
+    const [timerOn, settimerOn] = useState(false)
     function generateAllNewDice(){
     const num = []
     for (let i=0; i<10; i++){
@@ -37,6 +39,7 @@ export default function Game() {
 
     function rollDice(){
     if(!gameWon){
+        settimerOn(true)
         setRolls( roll => roll+1)
     setdice(oldice => oldice.map(die =>
         die.isHeld ? die : {...die, value: Math.floor(Math.random() * 6) + 1})) //go through the array and if it is held == true then just return the die, if it is not held return a random number
@@ -47,6 +50,7 @@ export default function Game() {
     }}
 
     function hold(id){
+        settimerOn(true)
     setdice(oldice => oldice.map(die => die.id == id ?
           {...die, isHeld: !die.isHeld} //make the isHeld prop flip
           : die  //check if the pressed id is equal to the id of the die in the array of random numbers of die
@@ -71,7 +75,7 @@ export default function Game() {
                 <hr/>
                 <div className="stats">
                     <p>Rolls: {rolls}</p>
-                    <p></p>
+                    <p>Time: {time}</p>
                 </div>
 
             <section className="main-dices">
