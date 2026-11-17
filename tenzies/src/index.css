@@ -13,7 +13,7 @@ button {
   cursor: pointer;
 }
 
-/* ---------- top bar ---------- */
+
 .wrap {
   max-width: 960px;
   margin: 0 auto;
@@ -48,7 +48,7 @@ button {
   color: #A19E96;
 }
 
-/* ---------- game column ---------- */
+
 main.game {
   max-width: 560px;
   margin: 0 auto;
@@ -173,4 +173,7 @@ hr {
 }
 html {
   scroll-behavior: smooth;
+}
+.mainnn{
+  height: 100vh;
 }

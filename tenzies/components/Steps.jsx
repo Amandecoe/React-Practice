@@ -24,7 +24,9 @@ export default function Steps(){
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
     }
-
+    .gl{
+    margin: 100px 0px;
+    }
     .glance{
     background: #191917;
     border: 1px solid #2B2A27;
@@ -143,7 +145,7 @@ export default function Steps(){
     </section>
     <hr/>
 
-    <section>
+    <section className="gl">
     <h2 className="glance-label">02 At a glance</h2>
     <div className="glancee">
     <div className="glance">

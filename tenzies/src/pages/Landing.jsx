@@ -11,6 +11,8 @@ export default function Landing(props){
             Tenzies . 10 dice . 1 number
             <hr/>
         </header>
+
+        <div className="mainnn">
         <div style={{padding: '0px 100px 10px'}} className="Main-landing">
             <p style={{color: '#A19E96', fontFamily : "JetBrains Mono", fontSize: '13px', fontWeight: '400'}}>/ten.zeez/</p>
             <h1 style = {{margin: '0px',color: '#F2F0EA', fontWeight: '800', fontfamily: 'Inter Tight', fontSize: '100px'}}>Tenzies</h1>
@@ -28,7 +30,7 @@ export default function Landing(props){
             , padding:'0px 28px', border:'1px solid #F2F0EA' }}>
             How it Works
         </button>
-
+        </div>
         <DiceRow/>
         </div>
         <hr/>
