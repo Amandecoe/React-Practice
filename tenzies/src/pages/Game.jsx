@@ -11,9 +11,9 @@ export default function Game() {
     const[best, setBest]=useState(()=>{
         try{
             const saved = localStorage.getItem("tenzies-best")
+            saved == null ? null : Number(saved)
         }
         catch{
-
         }
     })
     function generateAllNewDice(){
