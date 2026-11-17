@@ -54,12 +54,14 @@ export default function Game() {
     }
     return (
         <main>
-            <Link to="/">← Back</Link>
             {gameWon && <Confetti/>}
+            <nav>
+                <Link to="/">← Back</Link>
+            </nav>
             <h1 className="title">Tenzies</h1>
             <p className="instructions">Tap a die to hold it. Roll the rest.</p>
 
-            <section>
+            <section className="main-dices">
             <div className="dice-container">
                 {diceElements}
             </div>
