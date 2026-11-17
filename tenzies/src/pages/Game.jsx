@@ -57,8 +57,7 @@ export default function Game() {
             <Link to="/">← Back</Link>
             {gameWon && <Confetti/>}
             <h1 className="title">Tenzies</h1>
-            <p className="instructions">Roll until all dice are the same.
-            Click each die to freeze it at its current value between rolls.</p>
+            <p className="instructions">Tap a die to hold it. Roll the rest.</p>
             <div className="dice-container">
                 {diceElements}
             </div>

@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 export default function Steps(){
     const styles = `
     section{
@@ -11,6 +12,13 @@ export default function Steps(){
     margin: 0 0 2rem;
     }
 
+    .glance-label>h1{
+    color: #fff;
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+    }
+
     .glancee{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -22,6 +30,7 @@ export default function Steps(){
     border: 1px solid #2B2A27;
     border-radius: 16px;
     padding: 24px;
+    cursor: pointer;
     }
 
     .glance>strong{
@@ -47,6 +56,15 @@ export default function Steps(){
     color: #fff;
     padding: 0px 100px 10px;
     margin: 70px 0px;
+    }
+
+    .ready{
+    color: #fff;
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
     }
 
     .section-label {
@@ -142,6 +160,23 @@ export default function Steps(){
     </div>
     </div>
     </section>
+    <hr/>
+
+    <section>
+        <h2 className="glance-label">03 Play</h2>
+        <div className="ready">
+        <h1>Ready to roll?</h1>
+        <button style={{ marginBottom:'20px',marginRight:'20px',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#FF5A36' , minHeight:'48px',whiteSpace: 'nowrap'
+            , padding:'0px 28px', border:'1px solid black'
+        }}><Link style = {{color: 'inherit', textDecoration:'none'}}to="/play" className="play-link"
+        >Play now</Link>
+        </button>
+        </div>
+        <hr/>
+    </section>
+    <footer>
+    <h2 className="glance-label"> &copy; 2026 Tenzies . Roll again</h2>
+    </footer>
         </>
     )
 }
