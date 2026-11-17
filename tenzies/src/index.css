@@ -9,31 +9,31 @@ body {
 }
 
 main {
-    background-color: #F5F5F5;
+    background-color: #191917;
     height: 100%;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    border: 1px solid #2B2A27;
 }
 .instructions {
-    font-family: 'Inter', sans-serif;
+    font-family: 'JetBrains mono', sans-serif;
     font-weight: 400;
-    margin-top: 0;
+    font-size: 13px;
     text-align: center;
-    padding:10px;
 }
 .dice-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  max-width: 480px;
-  width: 100%;
-  padding:20px;
+  gap: 25px;
+  max-width: 900px;
+  padding: 10px;
+  height: auto;
 }
 .die {
-  padding: 15%;
+  padding: 12%;
   border: 0;
   border-radius: 16%;
   background: #f5f7fa;
@@ -73,8 +73,7 @@ button.roll-dice{
   width: auto;
   padding: 6px 21px;
   border: none;
-  border-radius: 6px;
-  background-color: #5035ff;
+  background-color: #FF5A36;
   color:white;
   font-size: 1.2rem;
 }
@@ -90,4 +89,9 @@ hr{
   color:#2B2A27;
   opacity: 15%;
 }
-
+.title{
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  font-family: 'Inter Tight';
+}

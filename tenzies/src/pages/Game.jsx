@@ -58,12 +58,15 @@ export default function Game() {
             {gameWon && <Confetti/>}
             <h1 className="title">Tenzies</h1>
             <p className="instructions">Tap a die to hold it. Roll the rest.</p>
+
+            <section>
             <div className="dice-container">
                 {diceElements}
             </div>
             <button ref={buttonRef} className="roll-dice"onClick={rollDice}>
                 {gameWon ? "New Game" : "Roll"}
                 </button>
+            </section>
         </main>
     )
 }
