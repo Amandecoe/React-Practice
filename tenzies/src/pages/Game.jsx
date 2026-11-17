@@ -8,6 +8,14 @@ export default function Game() {
     const [rolls, setRolls] = useState(0)
     const [time, settime] = useState(0)
     const [timerOn, settimerOn] = useState(false)
+    const[best, setBest]=useState(()=>{
+        try{
+            const saved = localStorage.getItem("tenzies-best")
+        }
+        catch{
+
+        }
+    })
     function generateAllNewDice(){
     const num = []
     for (let i=0; i<10; i++){
