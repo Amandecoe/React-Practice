@@ -11,11 +11,13 @@ export default function Game() {
     const[best, setBest]=useState(()=>{
         try{
             const saved = localStorage.getItem("tenzies-best")
-            saved == null ? null : Number(saved)
+            return  saved == null ? null : Number(saved)
         }
         catch{
+            return null
         }
     })
+
     function generateAllNewDice(){
     const num = []
     for (let i=0; i<10; i++){
@@ -30,6 +32,17 @@ export default function Game() {
     //having the arrow function in the initial value basically makes the state not rerun the generateAllnewDice function but only pass the return value of the function
     const gameWon = dice.every(die => die.isHeld) &&
                     dice.every(die => die.value === dice[0].value)
+
+
+    useEffect(()=>{
+        if(gameWon){
+            if (best === null || time < best){
+                setBest(time)
+                localStorage.setItem("tenzies-best", time)
+            }
+        }
+    },[gameWon])
+
 
     const buttonRef = useRef(null)
     useEffect(() => {
@@ -96,6 +109,7 @@ export default function Game() {
                 <div className="stats">
                     <p>Rolls: {rolls}</p>
                     <p>Time: {(time/1000).toFixed(1)}s</p>
+                    <p>Best: {(best/1000).toFixed(1)}s</p>
                 </div>
             <section className="main-dices">
             <div className="dice-container">
