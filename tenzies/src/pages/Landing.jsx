@@ -14,14 +14,14 @@ export default function Landing(props){
             <p style = {{color: '#F2F0EA', fontfamily: 'Inter Tight', fontWeight: '300', fontSize: '20px'}}>A Dice game with one rule. Roll ten dice, <br/> hold the number you want and keep rolling <br/> until every die matches.</p>
         <div className="landing-btn">
 
-        <button style={{ marginBottom:'20px',marginRight:'20px',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#FF5A36' , minHeight:'48px',whiteSpace: 'nowrap'
+        <button style={{ borderRadius: '999px',marginBottom:'20px',marginRight:'20px',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#FF5A36' , minHeight:'48px',whiteSpace: 'nowrap'
             , padding:'0px 28px', border:'1px solid black'
         }}><Link style = {{color: 'inherit', textDecoration:'none'}}to="/play" className="play-link"
         >Play now</Link>
         </button>
 
         <button
-        style={{ marginTop:'10px',marginBottom: '40px', color: '#F2F0EA',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#0E0E0D' , minHeight:'48px',whiteSpace: 'nowrap'
+        style={{ borderRadius: '999px',marginTop:'10px',marginBottom: '40px', color: '#F2F0EA',textDecoration: 'none',fontSize: '17px', fontWeight:'600', backgroundColor: '#0E0E0D' , minHeight:'48px',whiteSpace: 'nowrap'
             , padding:'0px 28px', border:'1px solid #F2F0EA' }}>
             <Link style = {{color: 'inherit', textDecoration:'none'}}to="/how" ></Link>How it Works
         </button>

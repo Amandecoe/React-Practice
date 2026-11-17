@@ -53,18 +53,20 @@ export default function Game() {
     )
     }
     return (
-        <main>
+        <>
             {gameWon && <Confetti/>}
             <nav className="wrap">
                 <header>
-                <Link to="/">← Back</Link>
-                <span className="topbar-label">/play</span>
+                <Link to="/" className="back-link">← Back</Link>
+                <span style={{fontFamily: 'JetBrains Mono', fontSsize: '13px',
+                letterSpacing: '0.02em',
+                color: '#A19E96'}}className="topbar-label">/play</span>
                 </header>
             </nav>
-
-            <section className="main-dices">
+        <main className="game">
                 <h1 className="title">Tenzies</h1>
                 <p className="instructions">Tap a die to hold it. Roll the rest.</p>
+            <section className="main-dices">
             <div className="dice-container">
                 {diceElements}
             </div>
@@ -73,5 +75,6 @@ export default function Game() {
                 </button>
             </section>
         </main>
+        </>
     )
 }
