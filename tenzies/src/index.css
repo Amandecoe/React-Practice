@@ -2,12 +2,24 @@
     box-sizing: border-box;
 }
 body {
-    margin: 0;
-    background-color: #0E0E0D;
-    font-family: Karla, sans-serif;
-    padding: 0px 100px;
+  margin: 0;
+  background: #0E0E0D;
+  color: #F2F0EA;
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  line-height: 1.5;
 }
-
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.wrap>header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #2B2A27;
+}
 .main-dices{
     width: 100%;
   max-width: 560px;
@@ -99,6 +111,7 @@ hr{
   opacity: 15%;
 }
 .title{
+  text-align: center;
   font-size: 56px;
   font-weight: 600;
   letter-spacing: -0.04em;

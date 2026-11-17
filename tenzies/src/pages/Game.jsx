@@ -55,13 +55,16 @@ export default function Game() {
     return (
         <main>
             {gameWon && <Confetti/>}
-            <nav>
+            <nav className="wrap">
+                <header>
                 <Link to="/">← Back</Link>
+                <span className="topbar-label">/play</span>
+                </header>
             </nav>
-            <h1 className="title">Tenzies</h1>
-            <p className="instructions">Tap a die to hold it. Roll the rest.</p>
 
             <section className="main-dices">
+                <h1 className="title">Tenzies</h1>
+                <p className="instructions">Tap a die to hold it. Roll the rest.</p>
             <div className="dice-container">
                 {diceElements}
             </div>
