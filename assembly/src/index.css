@@ -50,3 +50,16 @@ span.chip{
   border-radius: 3px;
   padding: 4.5px;
 }
+section.word{
+  display: flex;
+  justify-content: center;
+}
+section.word > span{
+  height:40px;
+  width: 40px;
+  background-color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
