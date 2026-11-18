@@ -8,7 +8,12 @@ export default function AssemblyEndgame(){
       color: lang.color
     }
     return(
-    <span style={styles}>{lang.name}</span>
+    <span
+    className="chip"
+    key={lang.name}
+    style={styles}>
+      {lang.name}
+      </span>
     )
   })
   return(
