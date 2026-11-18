@@ -22,7 +22,7 @@ export default function AssemblyEndgame(){
   })
 
   const word = alphabet.split("").map( lett => (
-    <button>{lett}</button>
+    <button key={lett}>{lett}</button>
   ))
 
   const letterElements = currentword.split("").map( (letter, index)=>
