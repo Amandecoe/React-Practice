@@ -1,72 +1,83 @@
-import { use, useState } from "react"
-import  {languages}  from "./language"
-export default function AssemblyEndgame(){
+import { useState } from "react"
+import { clsx } from "clsx"
+import { languages } from "./language"
 
-  const[currentword, setCurrentwWord] = useState("REACT")
+export default function AssemblyEndgame() {
+    const [currentWord, setCurrentWord] = useState("react")
+    const [guessedLetters, setGuessedLetters] = useState([])
 
-  const alphabet = "abcdefghijklmnopqrstuvwxyz"
-  const [choice, setChoice] = useState([])
-  console.log(choice)
-  const languageElements = languages.map(lang=>{
-    const styles = {
-      backgroundColor: lang.backgroundColor,
-      color: lang.color
+    const alphabet = "abcdefghijklmnopqrstuvwxyz"
+    
+    function addGuessedLetter(letter) {
+        setGuessedLetters(prevLetters =>
+            prevLetters.includes(letter) ?
+                prevLetters :
+                [...prevLetters, letter]
+        )
     }
-    return(
-    <span
-    className="chip"
-    key={lang.name}
-    style={styles}>
-      {lang.name}
-      </span>
+    const languageElements = languages.map(lang => {
+        const styles = {
+            backgroundColor: lang.backgroundColor,
+            color: lang.color
+        }
+        return (
+            <span
+                className="chip"
+                style={styles}
+                key={lang.name}
+            >
+                {lang.name}
+            </span>
+        )
+    })
+
+    const letterElements = currentWord.split("").map((letter, index) => (
+        <span key={index}>{letter.toUpperCase()}</span>
+    ))
+
+    const keyboardElements = alphabet.split("").map(letter => {
+        const isGuessed = guessedLetters.includes(letter)
+        const isCorrect = isGuessed && currentWord.includes(letter)
+        const isWrong = isGuessed && !currentWord.includes(letter)
+        const className = clsx({
+            correct: isCorrect,
+            wrong: isWrong
+        })
+
+        console.log(className)
+
+        return (
+            <button
+                className={className}
+                key={letter}
+                onClick={() => addGuessedLetter(letter)}
+            >
+                {letter.toUpperCase()}
+            </button>
+        )
+    })
+
+    return (
+        <main>
+            <header>
+                <h1>Assembly: Endgame</h1>
+                <p>Guess the word within 8 attempts to keep the
+                programming world safe from Assembly!</p>
+            </header>
+            <section className="game-status">
+                <h2>You win!</h2>
+                <p>Well done! 🎉</p>
+            </section>
+            <section className="language-chips">
+                {languageElements}
+            </section>
+            <section className="word">
+                {letterElements}
+            </section>
+            <section className="keyboard">
+                {keyboardElements}
+            </section>
+            <button className="new-game">New Game</button>
+        </main>
     )
-  })
-
-  function userchoice (letter)
-  {
-    setChoice(
-      prevletters =>
-        prevletters.includes(letter) ? prevletters
-      : [...prevletters, letter]
-  ) //if a letter has been chosen don't inculde it in the array just add the new one, if it hasn't been choosen before add it to the existing chosen ones
-  }
-
-  const word = alphabet.split("").map( lett => (
-    <button onClick={()=> userchoice(lett)} key={lett}>{lett}</button>
-  ))
-
-  const letterElements = currentword.split("").map( (letter, index)=>
-  (
-    <span key={index}>{letter.toUpperCase()}</span>
-  )
-  )
-
-  return(
-    <main>
-        <header>
-          <h1>Assembly: Endgame</h1>
-          <p>Guess the word within 8 attempts to keep the programming world safe from assembly</p>
-        </header>
-        <section className="game-status">
-            <h2>You Win!</h2>
-            <p>Well done</p>
-        </section>
-
-        <section className="language-chips">
-            {languageElements}
-        </section>
-
-        <section className="word">
-          {letterElements}
-        </section>
-
-        <section className="keyboard">
-          {word}
-        </section>
-
-        <button className="new-game">
-          New Game
-        </button>
-    </main>
-  )
 }
