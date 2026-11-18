@@ -53,6 +53,10 @@ export default function AssemblyEndgame(){
         <section className="keyboard">
           {word}
         </section>
+
+        <button className="new-game">
+          New Game
+        </button>
     </main>
   )
 }
