@@ -25,8 +25,10 @@ export default function AssemblyEndgame(){
   function userchoice (letter)
   {
     setChoice(
-      prevletters => [...prevletters, letter ]
-  )
+      prevletters =>
+        prevletters.includes(letter) ? prevletters
+      : [...prevletters, letter]
+  ) //if a letter has been chosen don't inculde it in the array just add the new one, if it hasn't been choosen before add it to the existing chosen ones
   }
 
   const word = alphabet.split("").map( lett => (
