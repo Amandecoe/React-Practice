@@ -18,9 +18,9 @@ export default function AssemblyEndgame(){
     )
   })
 
-  const letterElements = currentword.split("").map( letter=>
+  const letterElements = currentword.split("").map( (letter, index)=>
   (
-    <span>{letter.toUpperCase()}</span>
+    <span key={index}>{letter.toUpperCase()}</span>
   )
   )
 
