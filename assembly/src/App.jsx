@@ -1,4 +1,5 @@
 import React from "react"
+import { languages } from "./language"
 export default function AssemblyEndgame(){
   return(
     <>
@@ -10,6 +11,10 @@ export default function AssemblyEndgame(){
         <section className="game-status">
             <h2>You Win!</h2>
             <p>Well done</p>
+        </section>
+
+        <section>
+
         </section>
     </main>
     </>
