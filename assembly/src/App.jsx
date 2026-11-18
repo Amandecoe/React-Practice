@@ -3,6 +3,9 @@ import  {languages}  from "./language"
 export default function AssemblyEndgame(){
 
   const[currentword, setCurrentwWord] = useState("REACT")
+
+  const alphabet = "abcdefghijklmnopqrstuvwxyz"
+
   const languageElements = languages.map(lang=>{
     const styles = {
       backgroundColor: lang.backgroundColor,
@@ -17,6 +20,10 @@ export default function AssemblyEndgame(){
       </span>
     )
   })
+
+  const word = alphabet.split("").map( lett => (
+    <button>{lett}</button>
+  ))
 
   const letterElements = currentword.split("").map( (letter, index)=>
   (
@@ -41,6 +48,10 @@ export default function AssemblyEndgame(){
 
         <section className="word">
           {letterElements}
+        </section>
+
+        <section className="keyboard">
+          {word}
         </section>
     </main>
   )
