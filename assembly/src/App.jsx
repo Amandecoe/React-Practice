@@ -1,11 +1,12 @@
-import { useState } from "react"
+import { use, useState } from "react"
 import  {languages}  from "./language"
 export default function AssemblyEndgame(){
 
   const[currentword, setCurrentwWord] = useState("REACT")
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz"
-
+  const [choice, setChoice] = useState([])
+  console.log(choice)
   const languageElements = languages.map(lang=>{
     const styles = {
       backgroundColor: lang.backgroundColor,
@@ -21,8 +22,15 @@ export default function AssemblyEndgame(){
     )
   })
 
+  function userchoice (letter)
+  {
+    setChoice(
+      prevletters => [...prevletters, letter ]
+  )
+  }
+
   const word = alphabet.split("").map( lett => (
-    <button key={lett}>{lett}</button>
+    <button onClick={()=> userchoice(lett)} key={lett}>{lett}</button>
   ))
 
   const letterElements = currentword.split("").map( (letter, index)=>
