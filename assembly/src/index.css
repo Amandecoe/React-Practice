@@ -122,3 +122,19 @@ span.chip.lost::before {
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
 }
+.game-statuslost{
+  background-color: #cd0606;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f9f4da;
+    border-radius: 4px;
+    margin-block: 30px;
+}
+.game-statuslost > p{
+  margin:5px;
+}
+.game-statuslost > h2{
+  margin:5px;
+  font-size: 1.25rem;
+}
