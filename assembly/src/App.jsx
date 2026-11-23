@@ -7,7 +7,9 @@ export default function AssemblyEndgame() {
     const [currentWord, setCurrentWord] = useState("react")
     const [guessedLetters, setGuessedLetters] = useState([])
 
-    
+    const wrongGuessArray = guessedLetters.filter(
+        letter => !currentWord.includes(letter)
+    ) //contains the letters that are not found in the current word but are chosen by user
 
     //static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
