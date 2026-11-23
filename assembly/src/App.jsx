@@ -9,7 +9,7 @@ export default function AssemblyEndgame() {
 
     const wrongGuessCount = guessedLetters.filter(
         letter => !currentWord.includes(letter)
-    ).length() //contains the letters that are not found in the current word but are chosen by user
+    ).length //contains the letters that are not found in the current word but are chosen by user
 
     //static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -21,14 +21,16 @@ export default function AssemblyEndgame() {
                 [...prevLetters, letter]
         )
     }
-    const languageElements = languages.map(lang => {
+    const languageElements = languages.map((lang, index) => {
+        const isLanguageLost = index < wrongGuessCount
         const styles = {
             backgroundColor: lang.backgroundColor,
             color: lang.color
         }
+        const classNamex = clsx("chip", isLanguageLost && "lost")
         return (
             <span
-                className="chip"
+                className={classNamex}
                 style={styles}
                 key={lang.name}
             >
