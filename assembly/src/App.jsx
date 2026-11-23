@@ -3,9 +3,13 @@ import { clsx } from "clsx"
 import { languages } from "./language"
 
 export default function AssemblyEndgame() {
+    //states
     const [currentWord, setCurrentWord] = useState("react")
     const [guessedLetters, setGuessedLetters] = useState([])
 
+    
+
+    //static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
     function addGuessedLetter(letter) {
@@ -44,8 +48,6 @@ export default function AssemblyEndgame() {
             wrong: isWrong
         })
 
-        console.log(className)
-
         return (
             <button
                 className={className}
@@ -56,6 +58,7 @@ export default function AssemblyEndgame() {
             </button>
         )
     })
+
 
     return (
         <main>
