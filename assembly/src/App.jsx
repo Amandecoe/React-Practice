@@ -63,6 +63,8 @@ export default function AssemblyEndgame() {
                 className={className}
                 key={letter}
                 disabled={isGameover}
+                aria-disabled={guessedLetters.includes(letter)}
+                aria-laebl = {`letter ${letter}`}
                 onClick={() => addGuessedLetter(letter)}
             >
                 {letter.toUpperCase()}
@@ -110,7 +112,7 @@ export default function AssemblyEndgame() {
                 <p>Guess the word within 8 attempts to keep the
                 programming world safe from Assembly!</p>
             </header>
-            <section  className={gameStatusClass}>
+            <section  aria-live="polite"  role = "status" className={gameStatusClass}>
                 {renderGameStatus()}
             </section>
             <section className="language-chips">
