@@ -4,6 +4,7 @@ import { languages } from "./language"
 import { getFarewellText } from "./utils"
 import { getRandomWord } from "./utils"
 import Confetti from "react-confetti"
+import { DotPattern } from "@/components/ui/dot-pattern"
 
 export default function AssemblyEndgame() {
     //states
@@ -120,6 +121,7 @@ export default function AssemblyEndgame() {
     const attemptsLeft = maxAttempts - wrongGuessCount
 
     return (
+        <DotPattern className="min-h-[32rem]">
         <main>
             {
                 isGameWon &&
@@ -161,5 +163,6 @@ export default function AssemblyEndgame() {
             </section>
             {isGameover && <button onClick={startNewGame} className="new-game">New Game</button>}
         </main>
+        </DotPattern>
     )
 }
