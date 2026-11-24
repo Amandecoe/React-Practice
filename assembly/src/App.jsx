@@ -71,6 +71,29 @@ export default function AssemblyEndgame() {
         lost : isGameLost
     })
 
+    function renderGameStatus(){
+        if (!isGameover){
+            return null
+        }
+        if(isGameWon){
+            return (
+                <>
+                <h2>You win!</h2>
+                <p>Well done! 🎉</p>
+                </>
+            )
+        }
+            else{
+                return(
+                <>
+                <h2>Game Over!</h2>
+                    <p>Better start learning Assembly! </p>
+                </>
+                )
+            }
+        }
+    }
+
     return (
         <main>
             <header>
@@ -78,14 +101,9 @@ export default function AssemblyEndgame() {
                 <p>Guess the word within 8 attempts to keep the
                 programming world safe from Assembly!</p>
             </header>
-            {isGameWon && <section  className="game-status">
-                    <h2>You win!</h2>
-                    <p>Well done! 🎉</p>
-            </section>}
-            {isGameLost && <section  className="game-statuslost">
-                    <h2>Game Over!</h2>
-                    <p>Better start learning Assembly! </p>
-            </section>}
+            <section  className={gameStatusClass}>
+                {renderGameStatus}
+            </section>
             <section className="language-chips">
                 {languageElements}
             </section>
@@ -98,4 +116,4 @@ export default function AssemblyEndgame() {
             {isGameover && <button className="new-game">New Game</button>}
         </main>
     )
-}
+
