@@ -15,8 +15,7 @@ export default function AssemblyEndgame() {
     const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
     const isGameover = isGameWon || isGameLost
     const LastGuessLetter = guessedLetters[guessedLetters.length -1] //gives the last guessed letter
-    const isLastGuessIncorrect = LastGuessLetter && currentWord.includes(LastGuessLetter) //checkes if the LastGuess contains the current word
-    console.log(isLastGuessIncorrect)
+    const isLastGuessIncorrect = LastGuessLetter && !currentWord.includes(LastGuessLetter) //checkes if the LastGuess contains the current word
 
     //static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -77,8 +76,8 @@ export default function AssemblyEndgame() {
     })
 
     function renderGameStatus(){
-        if (!isGameover){
-            return null
+        if (!isGameover && isLastGuessIncorrect){
+            return <p className="farewell-message">Bye!</p>
         }
         if(isGameWon){
             return (
