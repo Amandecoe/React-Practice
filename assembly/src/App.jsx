@@ -6,7 +6,7 @@ import { getRandomWord } from "./utils"
 
 export default function AssemblyEndgame() {
     //states
-    const [currentWord, setCurrentWord] = useState(getRandomWord())
+    const [currentWord, setCurrentWord] = useState(() => getRandomWord())
     const [guessedLetters, setGuessedLetters] = useState([])
 
     const wrongGuessCount = guessedLetters.filter(
@@ -18,7 +18,6 @@ export default function AssemblyEndgame() {
     const LastGuessLetter = guessedLetters[guessedLetters.length -1] //gives the last guessed letter
     const isLastGuessIncorrect = LastGuessLetter && !currentWord.includes(LastGuessLetter) //checkes if the LastGuess contains the current word
 
-    //static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
     function addGuessedLetter(letter) {
@@ -27,6 +26,10 @@ export default function AssemblyEndgame() {
                 prevLetters :
                 [...prevLetters, letter]
         )
+    }
+    function startNewGame(){
+        setCurrentWord(getRandomWord())
+        setGuessedLetters([])
     }
     const languageElements = languages.map((lang, index) => {
         const isLanguageLost = index < wrongGuessCount
@@ -46,9 +49,14 @@ export default function AssemblyEndgame() {
         )
     })
 
-    const letterElements = currentWord.split("").map((letter, index) => (
-        <span key={index}>{guessedLetters.includes(letter) ? letter.toUpperCase() : ""}</span>
-    ))
+    const letterElements = currentWord.split("").map((letter, index) => {
+        const shouldrevealletter = isGameLost || guessedLetters.includes(letter)
+        const letterClassName = clsx(
+            isGameLost && !guessedLetters.includes(letter) && "missed-letter"
+        )
+        return(
+        <span key={index} className={letterClassName}>{shouldrevealletter ? letter.toUpperCase() : ""}</span>)
+    })
 
     const keyboardElements = alphabet.split("").map(letter => {
         const isGuessed = guessedLetters.includes(letter)
@@ -65,7 +73,7 @@ export default function AssemblyEndgame() {
                 key={letter}
                 disabled={isGameover}
                 aria-disabled={guessedLetters.includes(letter)}
-                aria-laebl = {`letter ${letter}`}
+                aria-label = {`letter ${letter}`}
                 onClick={() => addGuessedLetter(letter)}
             >
                 {letter.toUpperCase()}
@@ -125,7 +133,7 @@ export default function AssemblyEndgame() {
             <section className="keyboard">
                 {keyboardElements}
             </section>
-            {isGameover && <button className="new-game">New Game</button>}
+            {isGameover && <button onClick={startNewGame} className="new-game">New Game</button>}
         </main>
     )
 }
