@@ -47,7 +47,7 @@ main {
   max-width: 720px;
 }
 
-/* ---------- header ---------- */
+
 header {
   text-align: center;
   margin-top: 16px;
@@ -67,7 +67,7 @@ header > p {
   color: var(--muted);
 }
 
-/* ---------- status banner ---------- */
+
 section.game-status {
   display: flex;
   align-items: center;
@@ -226,7 +226,7 @@ section.word > span.missed-letter {
   border-bottom-color: var(--bad-line);
 }
 
-/* ---------- keyboard ---------- */
+
 section.keyboard {
   display: flex;
   flex-wrap: wrap;
@@ -282,7 +282,7 @@ section.keyboard > button.wrong {
   box-shadow: none;
 }
 
-/* ---------- new game ---------- */
+
 button.new-game {
   background-color: var(--accent);
   color: var(--bg);
@@ -348,7 +348,6 @@ main {
   max-width: 720px;
 }
 
-/* ---------- header ---------- */
 header {
   text-align: center;
   margin-top: 16px;
@@ -368,7 +367,6 @@ header > p {
   color: var(--muted);
 }
 
-/* ---------- status banner ---------- */
 section.game-status {
   display: flex;
   align-items: center;
