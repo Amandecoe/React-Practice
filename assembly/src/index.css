@@ -14,8 +14,8 @@
   --bad: #ff8f96;
   --bad-line: #b4424b;
   --amber: #e60f0c;
-  --mono: "JetBrains Mono", ui-monospace, monospace;
-  --sans: "Space Grotesk", Arial, sans-serif;
+  --mono: Inter, ui-monospace, monospace;
+  --sans:  sans-serif;
   --kgap: 6px;
   --key: min(56px, calc((100vw - 40px - 9 * var(--kgap)) / 10));
 }
