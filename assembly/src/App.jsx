@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { clsx } from "clsx"
 import { languages } from "./language"
+import { getFarewellText } from "./utils"
 
 export default function AssemblyEndgame() {
     //states
@@ -13,6 +14,10 @@ export default function AssemblyEndgame() {
     const isGameLost = wrongGuessCount >= languages.length - 1
     const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
     const isGameover = isGameWon || isGameLost
+    const LastGuessLetter = guessedLetters[guessedLetters.length -1] //gives the last guessed letter
+    const isLastGuessIncorrect = LastGuessLetter && currentWord.includes(LastGuessLetter) //checkes if the LastGuess contains the current word
+    console.log(isLastGuessIncorrect)
+
     //static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
@@ -92,6 +97,9 @@ export default function AssemblyEndgame() {
                 )
             }
         }
+    function FarewellText(){
+
+    }
     return (
         <main>
             <header>
