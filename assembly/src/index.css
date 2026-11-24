@@ -42,7 +42,7 @@ section.game-status{
 section.game-status >p{
   margin:5px;
 }
-section.game-status >p.farewell-message{
+section.game-status > p.farewell-message{
   margin:5px;
   background-color: #7A5EA7;
   border: 1px dashed #323232;
@@ -55,6 +55,10 @@ section.game-status > h2{
 }
 section.game-status.lost{
   background-color: #BA2A2A;
+}
+section.game-status.farewell{
+  background-color: #7A5EA7;
+  border: 1px dashed #323232;
 }
 section.game-status.won{
   background-color: #10A95B;

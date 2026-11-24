@@ -72,12 +72,13 @@ export default function AssemblyEndgame() {
 
     const gameStatusClass = clsx("game-status", {
         won: isGameWon,
-        lost : isGameLost
+        lost : isGameLost,
+        farwell : !isGameover && isLastGuessIncorrect
     })
 
     function renderGameStatus(){
         if (!isGameover && isLastGuessIncorrect){
-            return <p className="farewell-message">Bye!</p>
+            return <p className="farewell-message"></p>
         }
         if(isGameWon){
             return (
@@ -87,7 +88,7 @@ export default function AssemblyEndgame() {
                 </>
             )
         }
-            else{
+            if(isGameLost){
                 return(
                 <>
                 <h2>Game Over!</h2>
@@ -95,10 +96,8 @@ export default function AssemblyEndgame() {
                 </>
                 )
             }
+            return null
         }
-    function FarewellText(){
-
-    }
     return (
         <main>
             <header>
