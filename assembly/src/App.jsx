@@ -66,6 +66,11 @@ export default function AssemblyEndgame() {
     })
 
 
+    const gameStatusClass = clsx("game-status", {
+        won: isGameWon,
+        lost : isGameLost
+    })
+
     return (
         <main>
             <header>
