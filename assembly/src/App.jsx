@@ -92,8 +92,6 @@ export default function AssemblyEndgame() {
                 )
             }
         }
-    }
-
     return (
         <main>
             <header>
@@ -102,7 +100,7 @@ export default function AssemblyEndgame() {
                 programming world safe from Assembly!</p>
             </header>
             <section  className={gameStatusClass}>
-                {renderGameStatus}
+                {renderGameStatus()}
             </section>
             <section className="language-chips">
                 {languageElements}
@@ -116,4 +114,4 @@ export default function AssemblyEndgame() {
             {isGameover && <button className="new-game">New Game</button>}
         </main>
     )
-
+}
