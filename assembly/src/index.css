@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap");
 
 :root {
-  --bg: #000000;
+  --bg: #222022;
   --surface: #131a26;
   --surface-2: #000000;
   --line: #2c3648;
   --text: #e8edf5;
   --muted: #bec9de;
-  --accent: #48e76d;
+  --accent: #c3d809;
   --good: #7ee2a0;
   --good-bg: #12351f;
   --good-line: #2a7a4a;
