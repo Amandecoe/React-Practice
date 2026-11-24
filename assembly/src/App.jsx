@@ -115,6 +115,10 @@ export default function AssemblyEndgame() {
             }
             return null
         }
+    // RESTYLE: display-only values for the attempts meter
+    const maxAttempts = languages.length - 1
+    const attemptsLeft = maxAttempts - wrongGuessCount
+
     return (
         <main>
             {
@@ -131,13 +135,18 @@ export default function AssemblyEndgame() {
                 <div className="status-text">
                     {renderGameStatus()}
                 </div>
-                {/* RESTYLE: attempts counter (read-only, uses existing values). Delete this block to remove it. */}
+                {/* RESTYLE: attempts meter (read-only, uses existing values). Delete this block to remove it. */}
                 {(isGameover || isLastGuessIncorrect) &&
-                    <div className="attempts" aria-hidden="true">
-                        <small>{isGameWon ? "Wrong guesses" : "Attempts left"}</small>
-                        <strong>
-                            {isGameWon ? wrongGuessCount : (languages.length - 1) - wrongGuessCount} / {languages.length - 1}
-                        </strong>
+                    <div className="attempts" role="img" aria-label={`${attemptsLeft} of ${maxAttempts} attempts left`}>
+                        <div className="attempts-readout">
+                            <strong>{String(attemptsLeft).padStart(2, "0")}</strong>
+                            <span>left of {maxAttempts}</span>
+                        </div>
+                        <div className="pips">
+                            {Array.from({ length: maxAttempts }, (_, i) => (
+                                <i key={i} className={i < attemptsLeft ? "on" : "off"} />
+                            ))}
+                        </div>
                     </div>
                 }
             </section>
