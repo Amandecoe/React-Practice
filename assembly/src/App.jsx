@@ -3,6 +3,7 @@ import { clsx } from "clsx"
 import { languages } from "./language"
 import { getFarewellText } from "./utils"
 import { getRandomWord } from "./utils"
+import Confetti from "react-confetti"
 
 export default function AssemblyEndgame() {
     //states
@@ -33,9 +34,9 @@ export default function AssemblyEndgame() {
     }
     const languageElements = languages.map((lang, index) => {
         const isLanguageLost = index < wrongGuessCount
+        // RESTYLE: pass the language color to CSS as a variable (used for the dot on each chip)
         const styles = {
-            backgroundColor: lang.backgroundColor,
-            color: lang.color
+            "--lang": lang.backgroundColor
         }
         const classNamex = clsx("chip", isLanguageLost && "lost")
         return (
@@ -116,13 +117,29 @@ export default function AssemblyEndgame() {
         }
     return (
         <main>
+            {
+                isGameWon &&
+                <Confetti numberofpieces={1000}/>
+            }
             <header>
                 <h1>Assembly: Endgame</h1>
                 <p>Guess the word within 8 attempts to keep the
                 programming world safe from Assembly!</p>
             </header>
             <section  aria-live="polite"  role = "status" className={gameStatusClass}>
-                {renderGameStatus()}
+                {/* RESTYLE: message wrapped in a div so the attempts counter can sit beside it */}
+                <div className="status-text">
+                    {renderGameStatus()}
+                </div>
+                {/* RESTYLE: attempts counter (read-only, uses existing values). Delete this block to remove it. */}
+                {(isGameover || isLastGuessIncorrect) &&
+                    <div className="attempts" aria-hidden="true">
+                        <small>{isGameWon ? "Wrong guesses" : "Attempts left"}</small>
+                        <strong>
+                            {isGameWon ? wrongGuessCount : (languages.length - 1) - wrongGuessCount} / {languages.length - 1}
+                        </strong>
+                    </div>
+                }
             </section>
             <section className="language-chips">
                 {languageElements}
