@@ -1,19 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap");
 
 :root {
-  --bg: #0b0f16;
+  --bg: #000000;
   --surface: #131a26;
-  --surface-2: #1b2230;
+  --surface-2: #000000;
   --line: #2c3648;
   --text: #e8edf5;
-  --muted: #8a94a6;
-  --accent: #a7aabe;
+  --muted: #bec9de;
+  --accent: #48e76d;
   --good: #7ee2a0;
   --good-bg: #12351f;
   --good-line: #2a7a4a;
-  --bad: #ff8f96;
-  --bad-line: #b4424b;
-  --amber: #e60f0c;
+  --bad: #df3a45;
+  --bad-line: #670a12;
+  --amber: #b41b19;
   --mono: "JetBrains Mono", ui-monospace, monospace;
   --sans: "Space Grotesk", Arial, sans-serif;
   --kgap: 6px;
@@ -79,7 +79,7 @@ section.game-status {
   margin-block: 28px;
   padding: 16px 22px;
   border: 1px solid transparent;
-  border-radius: 16px;
+  /* border-radius: 16px; */
   color: var(--text);
 }
 section.game-status:not(.won):not(.lost):not(.farwell):not(.farewell) {
@@ -134,7 +134,6 @@ section.game-status.won {
 section.game-status.won h2,
 section.game-status.won .attempts { color: var(--good); }
 
-/* "farwell" is the class name the JSX currently uses; ".farewell" kept as well */
 section.game-status.farwell,
 section.game-status.farewell {
   background: linear-gradient(180deg, #2a2210, #1a160b);
@@ -146,7 +145,6 @@ section.game-status.farewell .attempts,
 section.game-status.farwell .farewell-message,
 section.game-status.farewell .farewell-message { color: var(--amber); }
 
-/* ---------- language chips ---------- */
 section.language-chips {
   display: flex;
   flex-wrap: wrap;
@@ -160,7 +158,7 @@ span.chip {
   align-items: center;
   gap: 8px;
   padding: 7px 13px;
-  border-radius: 999px;
+  /* border-radius: 999px; */
   background: #172033;
   border: 1px solid #34425c;
   color: var(--text);
